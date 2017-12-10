@@ -12,26 +12,19 @@ type DataController struct {
 }
 
 type Parkiran struct {
-    Id int
-    Nama string	
-    Kapasitas int
-    Tersedia int
-    Tarif int
+    Id 			int 	`json:"id"`
+    Nama 		string	`json:"nama"`
+    Kapasitas 	int 	`json:"kapasitas"`
+    Tersedia 	int 	`json:"tersedia"`
+    Tarif 		int 	`json:"tarif"`
 }
 
 func init() {
 	// register model
-	orm.RegisterModel(new(Parkiran))
-
-	// set default database
- 	orm.RegisterDataBase("default", "mysql", "root:@/parkir?charset=utf8")
-
- 	// create table
-	orm.RunSyncdb("default", false, true)
+	orm.RegisterModel(new(Parkiran))	
 }
 
 func (this *DataController) GetData() {
-	//var hasil Parkiran
 	var parkiran Parkiran
 
 	o := orm.NewOrm()
@@ -55,8 +48,4 @@ func (this *DataController) GetData() {
 		this.TplName = "blank.html"	
 	}
 	
-}
-
-func getDB(id int){
-
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   	<head>
+		<title>Lokasi parkir</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      
+	</head>
+	<body style="background-color:grey;">
+      </br></br></br>
+      <center>
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-sm-4"></div>
+               <div class="col-sm-4">
+           	 	  <p>
+                  <div class="panel panel-default" align="left">
+                     <div class="panel-heading"><h3>Lokasi Parkir</div>
+                     <div class="panel-body">
+                        <h3><p id="lokasi"></p></h3>
+                     </div>
+                  </div>
+               <div class="col-sm-4"></div>
+      </center>
+      <script>
+         var xmlhttp = new XMLHttpRequest();
+         xmlhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+                 var myObj = JSON.parse(this.responseText);
+                 document.getElementById("lokasi").innerHTML = "Tempat : Parkiran " + myObj.nama + "<br>Kapasitas : " + myObj.kapasitas + "<br>Tersedia  : "+myObj.tersedia + "<br>Tarif     : "+myObj.tarif;
+             }
+         };
+         xmlhttp.open("GET", "/data/{{.lokasi}}", true);
+         xmlhttp.send();
+      </script>
+   </body>
+</html>
+
