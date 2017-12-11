@@ -7,6 +7,6 @@ import (
 
 func init() {
     beego.Router("/", &controllers.MainController{})
-    beego.Router("/data/:id([1-3]+", &controllers.DataController{}, "get:GetData")
+    beego.Router("/data/:id([1-3]+", &controllers.DataController{})
     beego.Router("/view", &controllers.ViewController{})
 }

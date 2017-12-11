@@ -24,7 +24,7 @@ func init() {
 	orm.RegisterModel(new(Parkiran))	
 }
 
-func (this *DataController) GetData() {
+func (this *DataController) Get() {
 	var parkiran Parkiran
 
 	o := orm.NewOrm()

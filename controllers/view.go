@@ -12,8 +12,6 @@ type Lokasi struct{
 	Lok string `form:"loc"`
 }
 
-
-
 func (c *ViewController) Post() {
 	l := Lokasi{}
 	c.ParseForm(&l)
@@ -22,3 +20,6 @@ func (c *ViewController) Post() {
 	c.TplName = "view.html"
 }
 
+func (c *ViewController) Get() {
+	c.TplName = "blank.html"
+}
