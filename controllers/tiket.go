@@ -24,6 +24,6 @@ func init() {
 	orm.RegisterModel(new(Tiket))	
 }
 
-func (this *TiketController) GetData() {
+func (this *TiketController) Post() {
 
 }
