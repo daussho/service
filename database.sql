@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2017 at 09:48 AM
+-- Generation Time: Dec 12, 2017 at 06:05 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -41,9 +41,9 @@ CREATE TABLE `parkiran` (
 --
 
 INSERT INTO `parkiran` (`id`, `nama`, `kapasitas`, `tarif`, `tersedia`) VALUES
-(1, 'Sipil', 500, 2000, 500),
-(2, 'Seni Rupa', 300, 2000, 300),
-(3, 'Saraga', 700, 2000, 700);
+(1, 'Sipil', 500, 2000, 498),
+(2, 'Seni Rupa', 300, 2000, 299),
+(3, 'Saraga', 700, 2000, 698);
 
 -- --------------------------------------------------------
 
@@ -53,10 +53,21 @@ INSERT INTO `parkiran` (`id`, `nama`, `kapasitas`, `tarif`, `tersedia`) VALUES
 
 CREATE TABLE `tiket` (
   `id` int(11) NOT NULL,
-  `tiket_id` int(11) NOT NULL DEFAULT '0',
+  `tiket_id` int(11) NOT NULL,
   `tanggal_masuk` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tanggal_keluar` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tiket`
+--
+
+INSERT INTO `tiket` (`id`, `tiket_id`, `tanggal_masuk`, `tanggal_keluar`) VALUES
+(1, 1, '2017-12-12 11:47:55', '2017-12-12 11:56:32'),
+(2, 2, '2017-12-12 11:48:15', '2017-12-12 11:59:03'),
+(3, 3, '2017-12-12 11:48:18', '2017-12-12 11:59:11'),
+(1, 4, '2017-12-12 11:48:37', NULL),
+(3, 5, '2017-12-12 11:55:19', NULL);
 
 --
 -- Indexes for dumped tables
@@ -72,7 +83,7 @@ ALTER TABLE `parkiran`
 -- Indexes for table `tiket`
 --
 ALTER TABLE `tiket`
-  ADD PRIMARY KEY (`id`,`tiket_id`) USING BTREE;
+  ADD PRIMARY KEY (`tiket_id`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -87,7 +98,7 @@ ALTER TABLE `parkiran`
 -- AUTO_INCREMENT for table `tiket`
 --
 ALTER TABLE `tiket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `tiket_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
