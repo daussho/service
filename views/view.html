@@ -4,11 +4,10 @@
 		<title>Lokasi parkir</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-      
+		<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
 	</head>
 	<body style="background-color:grey;">
       </br></br></br>
@@ -22,6 +21,7 @@
                      <div class="panel-heading"><h3>Lokasi Parkir</div>
                      <div class="panel-body">
                         <h3><p id="lokasi"></p></h3>
+                         <center><button onclick="goBack()" class="btn btn-default">Back</button></center>
                      </div>
                   </div>
                <div class="col-sm-4"></div>
@@ -36,6 +36,10 @@
          };
          xmlhttp.open("GET", "/data/{{.lokasi}}", true);
          xmlhttp.send();
+
+         function goBack() {
+            window.history.back();
+        }
       </script>
    </body>
 </html>

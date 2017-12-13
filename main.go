@@ -11,7 +11,7 @@ func init() {
 	//orm.RegisterModel(new(Parkiran))
 
 	// set default database
- 	orm.RegisterDataBase("default", "mysql", "root:@/parkir?charset=utf8")
+ 	orm.RegisterDataBase("default", "mysql", "root:@tcp(167.205.67.251:3306)/parkir?charset=utf8")
 
  	// create table
 	orm.RunSyncdb("default", false, true)
