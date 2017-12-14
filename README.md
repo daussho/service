@@ -1,6 +1,6 @@
 # Parking service
 
-Service ini digunakan untuk meminta data kapasitas, jumlah tersedia dan tarif dari sebuah tempat parkir dengan mengirim request GET dengan response dalam JSON.
+Web service yang akan saya buat adalah web service untuk melihat kapasitas tempat parkir di ITB (Sipil, SR dan Saraga) secara real-time. Alat karcis akan menambah jumlah kendaraan saat ini saat mencetak karcis baru dan jumlah kendaraan akan otomatis berkurang saat ada kendaraan keluar. Dengan web service ini, diharapkan orang-orang yang ingin parkir di ITB dapat lebih mudah mencari tempat parkir karena tidak perlu berkeliling untuk mencari tempat parkir yang masih kosong.
 
 # Functional Requirement
 
